@@ -173,6 +173,10 @@ module.exports = async () => {
     err.status = 404
     next(err)
   })
+  
+  app.get('/.well-known/acme-challenge/:content', function(req, res) {
+  res.send('IhDagovcE8TcVpCYlYAouHCQELOE5cEhffUZVfsr6Pw.ysCXrBcP0EVNg7VcIpulwDN9kwq-FIZd8vJlronwzNQ')
+  })
 
   app.use((err, req, res, next) => {
     if (req.path === '/graphql') {
